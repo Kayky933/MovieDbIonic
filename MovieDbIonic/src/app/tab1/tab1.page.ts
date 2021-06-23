@@ -42,7 +42,7 @@ export class Tab1Page implements OnInit {
     console.log(evento.target.value);
     const busca = evento.target.value;
     if (busca && busca.trim() !== '') {
-      this.filmeService.buscarFilmes(busca, 'movie').subscribe((dados) => {
+      this.filmeService.getFilms(busca, 'movie').subscribe((dados) => {
         console.log(dados);
         this.listaFilmes = dados;
       });

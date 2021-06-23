@@ -12,22 +12,22 @@ import { IListaFilmes } from '../Models/ilista-filmes';
 export class FilmeService {
   private UrlApi = environment.Url;
   private KeyApi = environment.Key;
-  private Liguagem = environment.Lingua;
+  private Linguagem = environment.Lingua;
   private RegiaoLocal = environment.Regiao;
 
   constructor(
     private http: HttpClient,
     public toastController: ToastController
   ) {}
-  
-  buscarFilmes(busca: string, tipo: string): Observable<IListaFilmes> {
-    //const url = `${this.UrlApi}search/${tipo}/${this.KeyApi}&language=${this.Liguagem}&region=${this.RegiaoLocal}&query=${busca}`;
-    const url = `${this.UrlApi}${tipo}/550?api_key=${this.KeyApi}`;
-    return this.http.get<IListaFilmes>(url).pipe(
-      map((retorno) => retorno),
-      catchError((erro) => this.exibirErro(erro))
-    );
+  getFilms(busca: string, tipo: string): Observable<IListaFilmes> {
+      const url = `${this.UrlApi}search/${tipo}?api_key=${this.KeyApi}&language=${this.Linguagem}&region=${this.RegiaoLocal}&query=${busca}`;
+      return this.http.get<IListaFilmes>(url).pipe(
+        map((retorno) => retorno),
+        catchError((erro) => this.exibirErro(erro))
+      );
+    
   }
+  
 
   async exibirErro(erro) {
     const toast = await this.toastController.create({
