@@ -5,11 +5,13 @@ import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { IListaFilmes } from '../Models/ilista-filmes';
+import { IListaSeries } from '../Models/ilista-series';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class FilmeService {
+export class SeriesService {
+
   private UrlApi = environment.Url;
   private KeyApi = environment.Key;
   private Linguagem = environment.Lingua;
@@ -18,8 +20,8 @@ export class FilmeService {
   constructor(
     private http: HttpClient,
     public toastController: ToastController
-  ) {}  
-  getFilms(busca: string, tipo: string): Observable<IListaFilmes> {
+  ) {}
+  getSeries(busca: string, tipo: string): Observable<IListaSeries> {
       const url = `${this.UrlApi}search/${tipo}?api_key=${this.KeyApi}&language=${this.Linguagem}&region=${this.RegiaoLocal}&query=${busca}`;
       return this.http.get<IListaFilmes>(url).pipe(
         map((retorno) => retorno),

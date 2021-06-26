@@ -1,16 +1,15 @@
-export interface IFilmeModel {
+export interface ISerieModel {
     poster_path?: string;
-    title?: string;
-    original_title?: string;
-    release_date?: string;
-
     adult?: boolean;
-    overview?: string;   
+    overview?: string;
+    release_date?: string;
     first_air_date?: string;
     genre_ids?: number[];
-    id?: number;    
+    id?: number;
+    original_title?: string;
     original_name?: string;
-    original_language?: string;    
+    original_language?: string;
+    title?: string;
     name: string;
     backdrop_path?: string;
     popularity?: number;

@@ -1,17 +1,24 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+  <ion-toolbar color="dark">
+    <ion-title> {{ titulo }} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <img width="200" height="200" src="../../assets/images/kayky.jpg" />
+  <ion-item>
+    <ion-label>Nome: Kayky Matos Santana</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email: kayky7277@gmail.com</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Data de nascimento: 18/01/2004</ion-label>
+  </ion-item>
+ 
 </ion-content>
+<div class="ion-text-end">
+  <ion-button horizontal="end" fill="clear" (click)="GoTo('login')" color="danger">
+    <ion-icon  name="log-out-outline"></ion-icon>
+  </ion-button>
+</div>

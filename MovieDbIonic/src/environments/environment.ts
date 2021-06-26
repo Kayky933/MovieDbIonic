@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  Key: '',
+  Key: '',//coloque sua chave da api do link abaixo aqui
   Url: 'https://api.themoviedb.org/3/',
   Lingua: 'pt-BR',
   Regiao: 'BR'
